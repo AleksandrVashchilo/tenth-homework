@@ -1,10 +1,8 @@
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.io.IOException;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //Money money = new Money();
         //int m = money.getMoney();
@@ -90,6 +88,13 @@ public class Main {
 
         worker2.setAvailablePensionFunds(set2);
 
-        System.out.println(worker2.calculatePension());
+        //System.out.println(worker2.calculatePension());
+
+        List<PensionFund> pensionFunds = FundGenerator.generate();
+
+        pensionFunds.stream()
+                .filter(f -> f.getType().equals(TypeOfFund.STATE))
+                .filter(f -> f.getName().length() < 15)
+                .forEach(System.out::println);
     }
 }

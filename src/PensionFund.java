@@ -15,6 +15,27 @@ public class PensionFund {
         this.data = data;
         this.type = type;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public TypeOfFund getType() {
+        return type;
+    }
+
+    public void setType(TypeOfFund type) {
+        this.type = type;
+    }
+
     public double calculatePension(int age, double minSalary, double maxSalary) {
         double averageSalary;
         switch (type) {
