@@ -56,6 +56,8 @@ public class Worker extends Person implements AbleToCalculatePension {
             }
         }
     }
+
+
         @Override
         public void die () {
             System.out.println("Этот человек не дожил до пенсии");

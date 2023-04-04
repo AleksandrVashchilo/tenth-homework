@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static <Peron> void main(String[] args) throws IOException {
 
         //Money money = new Money();
         //int m = money.getMoney();
@@ -96,5 +96,9 @@ public class Main {
                 .filter(f -> f.getType().equals(TypeOfFund.STATE))
                 .filter(f -> f.getName().length() < 15)
                 .forEach(System.out::println);
+
+        Worker worker3 = new Worker();
+        DataBaseWriter<Person> database = new DataBaseWriter<>("DB", worker3);
+        database.save();
     }
 }
